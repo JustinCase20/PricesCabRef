@@ -1,0 +1,33 @@
+{
+    "SHOP_LABOR_RATE": 50,
+    "SUNDRY_MATERIAL_BASE": 350,
+    "DOOR_REMOVAL_REINSTALLATION": 10,
+    "SECOND_COLOR_PAINT": 225,
+    "SECOND_COLOR_ON_SITE_LABOR": 210,
+    "SECOND_COLOR_SHOP_LABOR": 60,
+    // ... Other prices and constants
+  
+    "calculateCosts": {
+      "shopLabour": "X * 50",
+      "sundriesMaterials": "IF(X <= 35, 350, IF(X > 35, (350 + (X - 35) * 5)))",
+      "doorRemovalReinstallation": "X * 10",
+      "paintShopAndOnSite": "IF(X <= 21, 380, IF(X <= 46, 835, 1285))",
+      "onSiteLabour": "IF(X <= 20, 1120, IF(X <= 35, 1120 + (X - 20) * 38, IF(X <= 45, 1680 + (X - 35) * 34, IF(X <= 55, 1960 + (X - 45) * 30, 2240 + (X - 55) * 25))))",
+      "secondColorPaint": 225,
+      "secondColorOnSiteLabor": 210,
+      "secondColorShopLabor": 60,
+      "oakShopLaborExtra": "25% extra of the shop labor",
+      "oakOnSiteLaborExtra": "25% extra of the on-site labor",
+      "glassDoorsCostPerUnit": 10,
+      "replaceGlassCostPerUnit": 80,
+      "interiorsCostPerUnit": 70,
+      "shelvesCostPerUnit": 27.5,
+      "ornateCabinetsPercentage": "5% of the on-site labor",
+      "softCloseHingesCostPerDoor": "X * 30",
+      "drillingHolesCostPerDoor": "X * 6.5",
+      "wineRackCostPerUnit": 75,
+      "extraRoomsCostPerUnit": 50
+      // ... Add other calculations based on X and specific values
+    }
+  }
+  
